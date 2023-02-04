@@ -1,0 +1,30 @@
+.column {
+  float: left;
+  width: 30%;
+  padding: 10px;
+}
+
+.column:hover {
+  background-image: linear-gradient(to bottom, #97e8ae, #3be36b);
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1 style="text-align: center">Play a game of Rock, Paper, Scissors against the computer.</h1>
+
+<div class="row">
+  <div class="column" onclick=play("rock")>
+      <img src="noun-rock-88661.png" alt="rock"/>
+      <p style="text-align: center">Rock</p>
+  </div>
+  <div class="column" onclick=play("paper")>
+      <img src="noun-paper-88662.png" alt="paper"/>
+      <p style="text-align: center">Paper</p>
+  </div>
+  <div class="column" onclick=play("scissors")>
+      <img src="noun-scissors-88666.png" alt="scissors"/>
+      <p style="text-align: center">Scissors</p>
+  </div>
+</div>
+
+<script>
+    function play(yourMove) {
+        Array.prototype.random = function () {
+            return this[Math.floor((Math.random()*this.length))];
+        }
+
+        console.log("My move: "+yourMove);
+        var myMove = ["rock", "paper", "scissors"].random();
+        location.href='/rps?yourMove='+yourMove+'&myMove='+myMove;
+    }
+</script>
+</body>
+</html>
